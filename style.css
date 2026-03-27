@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: move 10s infinite alternate ease-in-out;
+}
+.circle:nth-child(2) {
+    background: linear-gradient(45deg, #ec4899, #f59e0b);
+    bottom: 10%;
+    right: 10%;
+    animation-delay: -5s;
+}
+@keyframes move {
+    from { transform: translate(-10%, -10%); }
+    to { transform: translate(20%, 20%); }
+}
+/* Container Glassmorphism */
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+.nama-judul {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.foto-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.foto-saya {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; /* Dibuat bulat agar lebih modern */
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+.foto-saya:hover {
+    transform: scale(1.05);
+}
+.content-section {
+    margin-bottom: 25px;
+}
+.section-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #3b82f6;
+    border-left: 4px solid #3b82f6;
+    padding-left: 10px;
+}
+.description {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    text-align: justify;
+}
+.grid-prestasi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+}
+.box-prestasi {
+    display: block;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+.box-prestasi:hover {
+    background: #3b82f6;
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+    .grid-prestasi {
+        grid-template-columns: 1fr 1fr;
+    }
+}
